@@ -59,7 +59,7 @@
 
 
 
-safrecords-gpa/
+gpa-calculator/
 ├── index.html          # Main HTML structure
 ├── style.css           # All styles and animations
 ├── script.js           # Application logic
