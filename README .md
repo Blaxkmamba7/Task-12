@@ -76,10 +76,10 @@ Presentation Slides
  How to Run Locally
 
  Clone the repository
-git clone  https://blaxkmamba7.github.io/safrecords-gpa/
+git clone  https://blaxkmamba7.github.io/gpa-calculator/
 
  Navigate into the project
-cd safrecords-gpa
+cd gpa-calculator
 
  Open in browser (no build step needed)
 open index.html
