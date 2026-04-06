@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GPA Calculator — SAFRecords</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+ 
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">◈</span>
+        <span class="logo-text">SAFRecords <em>GPA</em></span>
+      </div>
+      <div class="header-badge">Academic Performance Tool</div>
+    </div>
+  </header>
+
+  
+  <section class="hero">
+    <div class="hero-bg-text">GPA</div>
+    <div class="hero-content">
+      <h1 class="hero-title">Calculate Your <br><span class="accent">Grade Point</span><br>Average</h1>
+      <p class="hero-sub">Input your courses, grades, and credit hours — get your GPA instantly using the SAFRecords grading module.</p>
+    </div>
+    <div class="hero-formula">
+      <span class="formula-label">Formula Used</span>
+      <span class="formula-eq">GPA = Σ(Grade × Credit) / Σ(Credit)</span>
+    </div>
+  </section>
+
+  
+  <main class="main-container">
+
+    
+    <section class="card input-card">
+      <div class="card-header">
+        <h2>Course Entry</h2>
+        <span class="card-tag">Step 01</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="course-table" id="courseTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Course Name</th>
+              <th>Grade (0–5)</th>
+              <th>Credit Hours</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="courseBody">
+            <!-- Rows injected by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-actions">
+        <button class="btn btn-ghost" id="addRowBtn">+ Add Course</button>
+        <button class="btn btn-ghost" id="resetBtn">↺ Reset</button>
+      </div>
+    </section>
+
+   
+    <div class="calc-row">
+      <button class="btn btn-primary" id="calculateBtn">Calculate GPA →</button>
+    </div>
+
+    
+    <section class="card result-card" id="resultSection" style="display:none;">
+      <div class="card-header">
+        <h2>Result Summary</h2>
+        <span class="card-tag">Step 02</span>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-box">
+          <span class="result-label">Your GPA</span>
+          <span class="result-value" id="gpaValue">0.00</span>
+        </div>
+        <div class="result-box">
+          <span class="result-label">Total Credits</span>
+          <span class="result-value" id="totalCredits">0</span>
+        </div>
+        <div class="result-box">
+          <span class="result-label">Total Courses</span>
+          <span class="result-value" id="totalCourses">0</span>
+        </div>
+        <div class="result-box wide">
+          <span class="result-label">Classification</span>
+          <span class="result-value accent" id="classification">—</span>
+        </div>
+      </div>
+
+      
+      <div class="table-wrapper" id="summaryTableWrapper">
+        <h3 class="summary-title">Course Breakdown</h3>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Grade</th>
+              <th>Credits</th>
+              <th>Quality Points</th>
+            </tr>
+          </thead>
+          <tbody id="summaryBody"></tbody>
+        </table>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn btn-ghost" id="printBtn">⎙ Print Result</button>
+      </div>
+    </section>
+
+   
+    <section class="card advisor-card" id="advisorSection" style="display:none;">
+      <div class="card-header">
+        <h2>Performance Advisor</h2>
+        <span class="card-tag">AI Insight</span>
+      </div>
+      <div class="advisor-content">
+        <div class="advisor-input-row">
+          <label for="targetGPA">Enter Your Target GPA</label>
+          <input type="number" id="targetGPA" min="0" max="5" step="0.1" placeholder="e.g. 4.50" />
+          <button class="btn btn-primary" id="adviseBtn">Get Advice</button>
+        </div>
+        <div class="advisor-output" id="advisorOutput"></div>
+      </div>
+    </section>
+
+  </main>
+
+  
+  <footer class="footer">
+    <p>SAFRecords GPA Calculator · Built with HTML5, CSS3 & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
